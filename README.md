@@ -54,13 +54,16 @@ The last argument is a callback function to handle errors.
 The following errors are provided to the callback:
 
 - Error: ENOENT, no such file or directory
-	The file does not exist or the path is not correct
+
+	(The file does not exist or the path is not correct)
 
 - Error: Range not satisfied 
-	Video player app does not provide a range header to the server
+
+	(Video player app does not provide a range header to the server)
 
 - Error: Stream file not identified in the request body
-	Video player app not specified which video needs to be played
+
+	(Video player app not specified which video needs to be played)
 
 
 ## Example
