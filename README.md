@@ -53,14 +53,14 @@ The third argument is the a number between 0 and 1 that specifies the position w
 The last argument is a callback function to handle errors.
 The following errors are provided to the callback:
 
-#### Error: ENOENT, no such file or directory
-The file does not exist or the path is not correct
+- Error: ENOENT, no such file or directory
+	The file does not exist or the path is not correct
 
-#### Error: Range not satisfied 
-Video player app does not provide a range header to the server
+- Error: Range not satisfied 
+	Video player app does not provide a range header to the server
 
-#### Error: Stream file not identified in the request body
-Video player app not specified which video needs to be played
+- Error: Stream file not identified in the request body
+	Video player app not specified which video needs to be played
 
 
 ## Example
@@ -75,14 +75,14 @@ require('vidadd')(app);
 
 app.route('/get-video').get(function(req, res){
   
-  res.sendVideo(path.resolve(__dirname,"movie.mp4"), 
-  				path.resolve(__dirname,"ad.mp4"), 
+  res.sendVideo(path.resolve(__dirname,"main-video.mp4"), 
+  				path.resolve(__dirname,"ad-video-clip.mp4"), 
   				0.5, 
   				function(err){
-  				if(err){
-  					console.log(err);
-  					res.status(400).send('I hate to say that, but something went wrong!');
-  				}
+	  				if(err){
+	  					console.log(err);
+	  					res.status(400).send('I hate to say that, but something went wrong!');
+	  				}
   			});
 });
 
